@@ -1,0 +1,4 @@
+export const metadata = { title: "Career" };
+export default function CareerPage() {
+  return <><section className="page-hero"><div className="container"><span className="eyebrow">CAREER & OPPORTUNITY</span><h1>Grow with a mission-driven technology organization.</h1><p>Explore pathways around learning, research, innovation, technology training and community initiatives.</p></div></section><section className="section section-light"><div className="container grid grid-3">{["Research & Innovation", "Technology Training", "Robotics & AI Projects", "Community & Rural Technology", "Content & Media", "Internship Opportunities"].map((x,i)=><article className="card" key={x}><span className="badge">PATHWAY {String(i+1).padStart(2,"0")}</span><h3>{x}</h3><p className="muted">Opportunities and openings will be published here when available.</p><strong>COMING SOON</strong></article>)}</div></section></>;
+}

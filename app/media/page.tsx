@@ -1,0 +1,3 @@
+const categories=["Photo Gallery","Video Gallery","Workshops","Seminars","Research Events","Technology Demonstrations"];
+export const metadata={title:"Media"};
+export default function Media(){return <><section className="page-hero"><div className="container"><span className="eyebrow">MEDIA</span><h1>Stories from the MVA innovation journey.</h1><p>Explore workshops, seminars, research activities and technology demonstrations.</p></div></section><section className="section section-light"><div className="container grid grid-3">{categories.map((x,i)=><article className="media-tile" key={x}><span>MEDIA {String(i+1).padStart(2,"0")}</span><h3>{x}</h3><strong>VIEW GALLERY →</strong></article>)}</div></section></>}
