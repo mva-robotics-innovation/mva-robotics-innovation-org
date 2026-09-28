@@ -1,0 +1,7 @@
+'use client';
+import {Canvas,useFrame} from '@react-three/fiber';
+import {OrbitControls,Float,Environment,MeshTransmissionMaterial} from '@react-three/drei';
+import {useRef} from 'react';
+import * as THREE from 'three';
+function Bot(){const ref=useRef<THREE.Group>(null);useFrame((_,d)=>{if(ref.current){ref.current.rotation.y+=d*.18;ref.current.position.y=Math.sin(Date.now()/700)*.08}});return <group ref={ref}><mesh position={[0,1.35,0]}><sphereGeometry args={[.72,32,32]}/><meshStandardMaterial color="#1b8fb3" metalness={.8} roughness={.2}/></mesh><mesh position={[0,.25,0]}><boxGeometry args={[1.5,1.8,1]}/><meshStandardMaterial color="#102d52" metalness={.8} roughness={.25}/></mesh>{[-.75,.75].map((x,i)=><mesh key={i} position={[x,-1.05,0]}><cylinderGeometry args={[.22,.3,1.2,20]}/><meshStandardMaterial color="#4ddcff" emissive="#0a5a77" emissiveIntensity={2}/></mesh>)}<mesh position={[0,1.35,.66]}><boxGeometry args={[.55,.18,.08]}/><meshStandardMaterial color="#ff9a4d" emissive="#ff5c24" emissiveIntensity={3}/></mesh></group>}
+export default function RobotScene(){return <Canvas camera={{position:[0,1.1,6],fov:45}}><ambientLight intensity={1}/><pointLight position={[3,4,4]} intensity={80} color="#32d9ff"/><pointLight position={[-3,1,2]} intensity={50} color="#5b7cff"/><Float speed={1.3} rotationIntensity={.25} floatIntensity={.3}><Bot/></Float><Environment preset="city"/><OrbitControls enableZoom={false} autoRotate autoRotateSpeed={.35}/></Canvas>}

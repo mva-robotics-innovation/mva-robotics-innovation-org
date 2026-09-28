@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';export default function manifest():MetadataRoute.Manifest{return{name:'MVA Robotics Innovation Org',short_name:'MVA Robotics',description:'Robotics, AI, research and innovation platform',start_url:'/',display:'standalone',background_color:'#030817',theme_color:'#32d9ff',icons:[{src:'/logo.jpeg',sizes:'512x512',type:'image/jpeg'}]}}

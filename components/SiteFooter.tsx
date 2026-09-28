@@ -1,0 +1,1 @@
+export default function SiteFooter(){return <footer className="footer"><div className="container" style={{display:'flex',justifyContent:'space-between',gap:20,flexWrap:'wrap'}}><div><strong>MVA ROBOTICS INNOVATION ORG</strong><p>Research • Robotics • AI • Innovation • Education</p></div><div>© {new Date().getFullYear()} MVA Robotics Innovation Org</div></div></footer>}
