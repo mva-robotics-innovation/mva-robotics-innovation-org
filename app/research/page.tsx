@@ -1,24 +1,3 @@
-import { Reveal } from "@/components/Reveal";
-import { SectionHeading } from "@/components/SectionHeading";
-
-export const metadata = { title: "Research Center" };
-
-const items = [
-  ["Research Paper Development", "Structure, document and communicate technology research."],
-  ["Scientific Innovation", "Turn observations and ideas into testable technology concepts."],
-  ["Prototype Development", "Build proof-of-concept systems using modern hardware and software."],
-  ["Research Mentorship", "Support students and young innovators through research-oriented guidance."],
-  ["Patent & Innovation Support", "Understand innovation documentation and pathways toward intellectual property."],
-  ["Young Scientist Programs", "Encourage students to participate in research, innovation and scientific forums."]
-];
-
-export default function ResearchPage() {
-  return (
-    <>
-      <section className="page-hero"><div className="container"><span className="eyebrow">RESEARCH CENTER</span><h1>Research that moves from question to prototype.</h1><p>Creating a culture where curiosity becomes experimentation, evidence and innovation.</p></div></section>
-      <section className="section"><div className="container"><SectionHeading eyebrow="01 / RESEARCH ECOSYSTEM" title="A practical path for young researchers." />
-        <div className="research-grid">{items.map(([title, text], i) => <Reveal key={title}><article className="research-card"><span>0{i + 1}</span><h3>{title}</h3><p>{text}</p></article></Reveal>)}</div>
-      </div></section>
-    </>
-  );
-}
+const items=[["Research Paper Development","Structure, document and communicate technology research."],["Scientific Publications","Develop and communicate research findings through appropriate scientific channels."],["Research Methodology","Research questions, literature review, experimentation and documentation."],["Research Mentorship","Guidance for students and young innovators pursuing research-oriented work."],["Prototype Development","Build proof-of-concept systems using modern hardware and software."],["Patent Guidance","Understand innovation documentation and pathways toward intellectual property."],["Innovation Incubation","Move promising ideas toward practical experimentation and product thinking."],["Young Scientist Programs","Encourage participation in research, innovation and scientific forums."],["Technology Demonstration","Communicate working technology through practical demonstrations."]];
+export const metadata={title:"Research Center"};
+export default function ResearchPage(){return <><section className="page-hero"><div className="container"><span className="eyebrow">RESEARCH & INNOVATION CENTER</span><h1>From question to evidence. From evidence to prototype.</h1><p>A practical research ecosystem for students, researchers and innovators.</p></div></section><section className="section section-light"><div className="container"><div className="grid grid-3">{items.map(([t,p],i)=><article className="card" key={t}><span className="badge">RESEARCH {String(i+1).padStart(2,"0")}</span><h3>{t}</h3><p className="muted">{p}</p></article>)}</div><div style={{marginTop:35}}><a className="btn btn-dark" href="/contact">Start Research ↗</a></div></div></section></>}
